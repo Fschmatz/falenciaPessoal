@@ -1,0 +1,9 @@
+url: jdbc:postgresql://localhost:5432/falenciapessoal
+username: postgres
+password: postgres
+driver: org.postgresql.Driver
+
+databaseChangeLog:
+  - include:
+      file: migrations/001_criador_db.sql
+      relativeToChangelogFile: true
