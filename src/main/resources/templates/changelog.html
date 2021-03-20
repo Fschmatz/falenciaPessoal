@@ -1,33 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+>
 <head>
     <meta charset="UTF-8">
     <title>Changelog</title>
 </head>
 <body>
 
-<div align="center">
-    --------> V3 In Space
-    v0.0.4 -
-    v0.0.3 - UI Experimental para Testes
-    v0.0.2 - Controllers implemetados e testados
-    v0.0.1 - Reinicio do projeto !? Again!
 
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Changelog</h1>
+                    <br></br>
+                    <p>
 
-    --------> V2 A Revanche
-    v0.0.2 - Implosão do projeto !
-    v0.0.1 - Reinicio do projeto !?
+                        --------> V3 In Space<br>
+                        v0.0.4 - UI +-<br>
+                        v0.0.3 - UI Experimental para Testes<br>
+                        v0.0.2 - Controllers implemetados e testados<br>
+                        v0.0.1 - Reinicio do projeto !? Again!<br>
 
+                        <br></br>
 
-    --------> V1 First Blood
+                        --------> V2 A Revanche<br>
+                        v0.0.2 - Implosão do projeto !<br>
+                        v0.0.1 - Reinicio do projeto !?<br>
 
-    v0.0.7 - Mudança de Controllers
-    v0.0.6 - Fixes para todos os lados
-    v0.0.5 - CRUD Teoricamente Funcional
-    v0.0.4 - Controller
-    v0.0.3 - Repository
-    v0.0.2 - Classes + Db + DAO?
-    v0.0.1 - Inicio do projeto,Add SpringBoot
+                        <br></br>
+
+                        --------> V1 First Blood<br>
+
+                        v0.0.7 - Mudança de Controllers<br>
+                        v0.0.6 - Fixes para todos os lados<br>
+                        v0.0.5 - CRUD Teoricamente Funcional<br>
+                        v0.0.4 - Controller<br>
+                        v0.0.3 - Repository<br>
+                        v0.0.2 - Classes + Db + DAO?<br>
+                        v0.0.1 - Inicio do projeto,Add SpringBoot<br>
+                        <br></br>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 

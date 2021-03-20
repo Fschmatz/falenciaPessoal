@@ -1,44 +1,71 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
-    <meta charset="UTF-8">
-    <title>Nova Categoria</title>
-  <style type="text/css">
-    label {
-      display: inline-block;
-      width: 200px;
-      margin: 5px;
-      text-align: left;
-    }
-    input[type=text], input[type=password], select {
-      display: inline-block;
-      width: 200px;
-    }
-    input[type=radio] {
-      margin-left: 45px;
-    }
-    input[type=checkbox] {
-      margin-right: 190px;
-    }
-    button {
-      padding: 5px;
-      margin: 10px;
-    }
-  </style>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{../../css/main.css}" rel="stylesheet">
 </head>
+
 <body>
 
-<div align="center">
-  <h1>User Registration</h1>
-  <form action="#" th:action="@{/addCategoria}" method="post" th:object="${categoria}">
-    <label>Nome:</label>
-    <input type="text" th:field="*{nome}" /><br/>
+<div class="container-fluid">
+    <div class="row">
 
+        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+            <div>
+                <section layout:fragment="content">
+                    <div class="container my-5">
+                        <h3>Nova Categoria</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="col-md-10">
+                                    <form action="#" method="post">
+                                        <div class="row">
+                                            <div class="form-group col-md-8">
+                                                <label for="descricao" class="col-form-label">Nome da Categoria</label>
+                                                <input type="text" class="form-control" name="descricao"
+                                                       id="descricao" required> <span class="text-danger"></span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="submit" class="btn btn-primary" value="Adicionar">
+                                            </div>
 
-    <button type="submit">Adicionar</button>
-  </form>
+                                            <div class="form-group col-md-8"></div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 </div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
 
 </body>
 </html>
+

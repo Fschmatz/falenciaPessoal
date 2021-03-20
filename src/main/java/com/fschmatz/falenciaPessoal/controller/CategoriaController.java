@@ -21,7 +21,6 @@ import lombok.AllArgsConstructor;
 import javax.transaction.Transactional;
 
 @RestController
-//@Controller  //video disse para usar controller ??
 @AllArgsConstructor
 @Transactional
 @RequestMapping("/categoria")
