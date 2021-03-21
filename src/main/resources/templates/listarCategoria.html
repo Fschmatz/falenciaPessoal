@@ -16,33 +16,18 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Dashboard</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="row">
-
             <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-
                 <!-- start content utama -->
                 <div>
                     <section layout:fragment="content">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm-10">Lista de Categorias</div>
+                                <div class="col-sm-10"><h1><br><br>Gerenciamento de Categorias</h1></div>
                                 <div class="col-sm-2">
-                                    <a href="/money/categorias/add" class="btn btn-primary active" role="button"
+                                    <br><br><br><br>
+                                    <a href="/falenciaPessoal/categorias/add" class="btn btn-primary active" role="button"
                                         aria-pressed="true"><i class="fas fa-plus"></i>Adicionar</a>
                                 </div>
                             </div>
@@ -53,14 +38,13 @@
                                 <table class="table table-striped ">
                                     <thead>
                                         <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Descricao</th>
+                                            <th scope="col">Descrição</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr data-th-each="c : ${categorias}">
-                                            <td data-th-text="${c.id_categoria}"></td>
+
                                             <td data-th-text="${c.descricao}"></td>
                                             <td>
                                                 <a th:href="@{/falenciaPessoal/categorias/edit/{id}(id=${c.id_categoria})}"   class="btn btn-success" title="Editar">
@@ -80,6 +64,7 @@
             </main>
         </div>
     </div>
+
 
     <!-- Bootstrap core JavaScript
 ================================================== -->
