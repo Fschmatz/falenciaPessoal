@@ -7,11 +7,30 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <style>
+
+        .navbar {
+            background: #00518c;
+        }
+
+        li a {
+            display: block;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #005da2;
+        }
+    </style>
 </head>
 <body>
 
 <!-- Main Navigation -->
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark">
     <a class="navbar-brand" th:href="@{/}">Analista de Falência Pessoal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +43,7 @@
                 <a class="nav-link" th:href="@{/}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/falenciaPessoal/categorias}">Gerenciar Categorias</a>
+                <a class="nav-link" th:href="@{/falenciaPessoal/categorias}">Categorias</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/changelog}">Changelog</a>
