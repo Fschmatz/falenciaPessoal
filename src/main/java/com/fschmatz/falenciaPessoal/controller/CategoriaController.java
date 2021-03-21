@@ -29,32 +29,6 @@ public class CategoriaController {
     CategoriaRepository repository;
 
 
-    //--->  TESTES
-    /* @RequestMapping(value="index")
-    public static String getAllCategorias(){
-        return "index";
-    }
-
-   @GetMapping
-    public ResponseEntity<List<Categoria>> getAll() {
-        try {
-            List<Categoria> items = new ArrayList<Categoria>();
-
-            repository.findAll().forEach(items::add);
-
-            if (items.isEmpty())
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-            return new ResponseEntity<>(items, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }*/
-
-
-    //--->  TESTES
-
-
     @GetMapping
     public ResponseEntity<List<Categoria>> getAll() {
         try {

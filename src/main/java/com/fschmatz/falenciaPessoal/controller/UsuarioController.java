@@ -23,18 +23,6 @@ public class UsuarioController {
 
     UsuarioRepository repository;
 
-
-    //--->  TESTES
-
-    @RequestMapping(value="/home")
-    public static String ola(){
-        return "index";
-    }
-
-
-    //--->  TESTES
-
-
     @GetMapping
     public ResponseEntity<List<Usuario>> getAll() {
         try {

@@ -24,18 +24,6 @@ public class DespesaController {
 
     DespesaRepository repository;
 
-
-    //--->  TESTES
-
-    @RequestMapping(value="/home")
-    public static String ola(){
-        return "index";
-    }
-
-
-    //--->  TESTES
-
-
     @GetMapping
     public ResponseEntity<List<Despesa>> getAll() {
         try {

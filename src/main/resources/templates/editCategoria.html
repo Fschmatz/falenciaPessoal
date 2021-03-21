@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{layout}">
+
+<head>
+    <meta charset="utf-8">
+
+
+    <title>Analista de Falência Pessoal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+
+                <div>
+
+                    <section layout:fragment="content">
+                        <div class="container my-5">
+                            <h3> Editar Categoria</h3>
+                            <div th:each="c : ${categoria}" class="container detalhesCategoria">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-md-10">
+
+                                            <form action="#" method="post">
+                                                <div class="row">
+                                                    <div class="form-group col-md-8">
+                                                        <label for="descricao" class="col-form-label">Nome da
+                                                            Categoria</label>
+                                                        <input type="text" class="form-control" name="descricao"
+                                                            id="descricao" placeholder="descricao" th:value="${c.descricao}" required><span
+                                                            class="text-danger"></span>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <input type="submit" class="btn btn-primary"
+                                                            value="Editar Categoria">
+                                                    </div>
+
+                                                    <div class="form-group col-md-8"></div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </section>
+        </div>
+        </main>
+    </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<body>

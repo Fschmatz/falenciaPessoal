@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{layout}">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Analista de Falência Pessoal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+
+                <!-- start content utama -->
+                <div>
+                    <section layout:fragment="content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-10">Lista de Categorias</div>
+                                <div class="col-sm-2">
+                                    <a href="/money/categorias/add" class="btn btn-primary active" role="button"
+                                        aria-pressed="true"><i class="fas fa-plus"></i>Adicionar</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <br>
+                            </div>
+                            <div class="row">
+                                <table class="table table-striped ">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Descricao</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-th-each="c : ${categorias}">
+                                            <td data-th-text="${c.id_categoria}"></td>
+                                            <td data-th-text="${c.descricao}"></td>
+                                            <td>
+                                                <a th:href="@{/falenciaPessoal/categorias/edit/{id}(id=${c.id_categoria})}"   class="btn btn-success" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a th:href="@{/falenciaPessoal/categorias/delete/{id}(id=${c.id_categoria})}" class="btn btn-danger" title="Excluir">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<body>

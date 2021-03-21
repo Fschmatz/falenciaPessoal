@@ -24,17 +24,6 @@ public class ReceitaController {
     ReceitaRepository repository;
 
 
-    //--->  TESTES
-
-    @RequestMapping(value="/home")
-    public static String ola(){
-        return "index";
-    }
-
-
-    //--->  TESTES
-
-
     @GetMapping
     public ResponseEntity<List<Receita>> getAll() {
         try {
