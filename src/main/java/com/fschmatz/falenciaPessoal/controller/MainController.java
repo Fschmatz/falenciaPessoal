@@ -23,6 +23,12 @@ public class MainController {
 
     CategoriaRepository catRepository;
 
+    //LOGIN
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
     //PAGINA PRINCIPAL
     @GetMapping("/")
     public String homePage() {

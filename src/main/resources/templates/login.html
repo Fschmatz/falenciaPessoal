@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <style>
+        .navbar {
+            background: #00518c;
+        }
+        div
+        {
+            display:block;
+            text-align:center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body >
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand">Analista de Falência Pessoal</a>
+</nav>
+
+<!-- Content Section -->
+
+<section layout:fragment="content">
+    <div class = "container">
+        <div class = "row">
+            <div class ="col-md-6 col-md-offset-3">
+
+                <div align="center">
+                    <br><br>
+                    <h1>Bem Vindo</h1>
+                </div>
+
+                <form th:action="@{/login}" method="post">
+
+                    <!-- error message -->
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">Usuário ou senha inválidos</div>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for ="username"></label>
+                        <input type="text" class = "form-control" id ="username" name = "username"
+                               placeholder="Login" autofocus="autofocus">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"></label> <input type="password"
+                                                                    id="password" name="password" class="form-control"
+                                                                    placeholder="Senha" />
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <input type="submit" name="login-submit" id="login-submit"
+                                       class="form-control btn btn-primary" value="Entrar" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="text-muted">&copy; 2021 Fernando José Schmatz. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional Section -->
+<th:block layout:fragment="optional" />
+
+</body>
+</html>
