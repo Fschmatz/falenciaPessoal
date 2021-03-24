@@ -2,7 +2,11 @@ package com.fschmatz.falenciaPessoal.controller;
 
 import java.util.*;
 import com.fschmatz.falenciaPessoal.entity.Categoria;
+import com.fschmatz.falenciaPessoal.entity.Despesa;
+import com.fschmatz.falenciaPessoal.entity.Receita;
 import com.fschmatz.falenciaPessoal.repository.CategoriaRepository;
+import com.fschmatz.falenciaPessoal.repository.DespesaRepository;
+import com.fschmatz.falenciaPessoal.repository.ReceitaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
@@ -22,6 +26,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class MainController {
 
     CategoriaRepository catRepository;
+    DespesaRepository despRepository;
+    ReceitaRepository recRepository;
 
     //LOGIN
     @GetMapping("/login")
@@ -39,6 +45,22 @@ public class MainController {
     public String home() {
         return "home";
     }
+
+
+    //PAGINAS SIMPLES
+    @GetMapping("/error")
+    public String erro() {
+        return "error";
+    }
+
+    @GetMapping("/changelog")
+    public String changelog() {
+        return "changelog";
+    }
+
+
+
+    //------------------ HTML CATEGORIAS
 
     @RequestMapping("/falenciaPessoal/categorias")
     public ModelAndView listarCategoria(){
@@ -97,19 +119,35 @@ public class MainController {
         return "redirect:/falenciaPessoal/categorias";
     }
 
+    //------------------ HTML CATEGORIAS
 
 
 
+    //------------------ HTML DESPESAS
 
-    //Paginas simples
-
-    @GetMapping("/error")
-    public String erro() {
-        return "error";
+    @RequestMapping("/falenciaPessoal/despesas")
+    public ModelAndView listarDespesa(){
+        ModelAndView mv = new ModelAndView("listarDespesa");
+        Iterable<Despesa> despesas = despRepository.findAll();
+        mv.addObject("despesas", despesas);
+        return mv;
     }
 
-    @GetMapping("/changelog")
-    public String changelog() {
-        return "changelog";
+    //------------------ HTML DESPESAS
+
+
+
+    //------------------ HTML RECEITAS
+
+    @RequestMapping("/falenciaPessoal/receitas")
+    public ModelAndView listarReceitas(){
+        ModelAndView mv = new ModelAndView("listarReceita");
+        Iterable<Receita> receitas = recRepository.findAll();
+        mv.addObject("receitas", receitas);
+        return mv;
     }
+
+    //------------------ HTML RECEITAS
+
+
 }
