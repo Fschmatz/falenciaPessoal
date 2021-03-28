@@ -18,6 +18,19 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+        </div>
+    </nav>
 
     <div class="container-fluid">
         <div class="row">
@@ -28,8 +41,8 @@
 
                     <section layout:fragment="content">
                         <div class="container my-5">
-                            <h3>Editar Categoria<br><br></h3>
-                            <div th:each="c : ${categoria}" class="container detalhesCategoria">
+                            <h3>Editar Receita<br><br></h3>
+                            <div th:each="r : ${receita}" class="container detalhesCategoria">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="col-md-10">
@@ -37,15 +50,21 @@
                                             <form action="#" method="post">
                                                 <div class="row">
                                                     <div class="form-group col-md-8">
-                                                        <label for="descricao" class="col-form-label">Nome da
-                                                            Categoria</label>
-                                                        <input type="text" class="form-control" name="descricao"
-                                                            id="descricao" placeholder="descricao" th:value="${c.descricao}" required><span
+                                                        <label for="nome" class="col-form-label">Nome da
+                                                            Receita</label>
+                                                        <input type="text" class="form-control" name="nome"
+                                                            id="nome" placeholder="nome" th:value="${r.nome}" required><span
+                                                            class="text-danger"></span>
+                                                    </div>
+                                                    <div class="form-group col-md-8">
+                                                        <label for="valor" class="col-form-label">Valor</label>
+                                                        <input type="text" class="form-control" name="valor"
+                                                               id="valor" placeholder="valor" th:value="${r.valor}" required><span
                                                             class="text-danger"></span>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <input type="submit" class="btn btn-primary"
-                                                            value="Editar Categoria">
+                                                            value="Editar Receita">
                                                     </div>
 
                                                     <div class="form-group col-md-8"></div>

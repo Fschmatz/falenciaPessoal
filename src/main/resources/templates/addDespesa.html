@@ -6,8 +6,6 @@
 
 <head>
     <meta charset="utf-8">
-
-
     <title>Analista de Falência Pessoal</title>
 
     <!-- Bootstrap core CSS -->
@@ -26,24 +24,55 @@
                <div>
                     <section layout:fragment="content">                        
                         <div class="container my-5">
-                            <h3>Adicionar Categoria<br><br></h3>
+                            <h3>Adicionar Despesa<br><br></h3>
                             <div class="card">
                                 <div class="card-body">
                                     <div class="col-md-10">
                                         <form action="#" method="post">
                                             <div class="row">
                                                 <div class="form-group col-md-8">
-                                                    <label for="descricao" class="col-form-label">Nome da Categoria</label>
+                                                    <label for="descricao" class="col-form-label">Nome da Despesa</label>
                                                     <input type="text" class="form-control" name="descricao"
                                                         id="descricao"  required> <span class="text-danger"></span>
                                                 </div>
-                                                <div class="col-md-6">
+
+
+<!--                                                TESTES-->
+
+
+
+
+                                                <select th:field="*{categoria}">
+                                                    <option value="">Select Country</option>
+                                                    <option th:each="categoria : ${descricao}" th:value="${id_categoria}" th:text="${descricao}"></option>
+                                                </select>
+
+
+
+                                                <div class="col-lg-3" th:object="${categoria}">
+                                                    <select class="form-control" id="testOrder" name="testOrder">
+                                                        <option value="">Selecionar Categoria</option>
+                                                        <option th:each="c : ${categorias}"
+                                                                th:value="${c.id_categoria}"
+                                                                th:text="${c.id_categoria}+' : '+${c.descricao}"></option>
+                                                    </select>
+                                                </div>
+
+
+
+
+<!--                                                TESTES-->
+
+
                                                     <input type="submit" class="btn btn-primary" value="Adicionar">
                                                 </div>
 
                                                 <div class="form-group col-md-8"></div>
 
                                             </div>
+                                        </form>
+
+
                                         </form>
                                     </div>
                                 </div>
@@ -66,6 +95,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{assets/bootstrap-select-1.13.9/dist/js/bootstrap-select.js}"></script>
 
 </body>
 

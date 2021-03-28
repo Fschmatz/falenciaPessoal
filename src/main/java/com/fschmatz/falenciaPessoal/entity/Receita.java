@@ -18,7 +18,6 @@ public class Receita {
     private Integer id_receita;
 
     private String nome;
-
     private BigDecimal valor;
 
     @ManyToOne

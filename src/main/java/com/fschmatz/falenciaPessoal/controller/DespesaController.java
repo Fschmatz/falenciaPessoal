@@ -1,14 +1,12 @@
 package com.fschmatz.falenciaPessoal.controller;
 
-
-
 import com.fschmatz.falenciaPessoal.entity.Despesa;
 import com.fschmatz.falenciaPessoal.repository.DespesaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -83,5 +81,18 @@ public class DespesaController {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
+
+    ///TESTES
+
+    /*@RequestMapping(value="/despesaComCategoria/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Despesa getDespesaComCategoriaNome(@PathVariable("id") Integer id){
+        Optional<Despesa> despesa = repository.findById(id);
+        //despesa.get().
+        //despesa.g
+       // despesa.
+
+        return despesa.get();
+    }*/
+
 
 }

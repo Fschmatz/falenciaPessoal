@@ -20,20 +20,39 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+
+        </div>
+    </nav>
+
     <div class="container-fluid">
         <div class="row">
+
+
             <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+
                <div>
+                    
                     <section layout:fragment="content">                        
                         <div class="container my-5">
-                            <h3>Adicionar Categoria<br><br></h3>
+                            <h3>Adicionar Receita<br><br></h3>
                             <div class="card">
                                 <div class="card-body">
                                     <div class="col-md-10">
                                         <form action="#" method="post">
                                             <div class="row">
                                                 <div class="form-group col-md-8">
-                                                    <label for="descricao" class="col-form-label">Nome da Categoria</label>
+                                                    <label for="descricao" class="col-form-label">Nome da Receita</label>
                                                     <input type="text" class="form-control" name="descricao"
                                                         id="descricao"  required> <span class="text-danger"></span>
                                                 </div>

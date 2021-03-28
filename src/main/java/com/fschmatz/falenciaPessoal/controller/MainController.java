@@ -123,28 +123,132 @@ public class MainController {
 
 
 
+
+
     //------------------ HTML DESPESAS
 
     @RequestMapping("/falenciaPessoal/despesas")
     public ModelAndView listarDespesa(){
-        ModelAndView mv = new ModelAndView("listarDespesa");
+        ModelAndView mv = new ModelAndView("listarDespesas");
         Iterable<Despesa> despesas = despRepository.findAll();
         mv.addObject("despesas", despesas);
         return mv;
+    }
+
+    @RequestMapping(value="/falenciaPessoal/despesas/add", method=RequestMethod.GET)
+    public String formDespesa(){
+        return "addDespesa";
+    }
+
+    @PostMapping("/falenciaPessoal/despesas/add")
+    public String formDespesa(@Validated Despesa despesa, BindingResult result, RedirectAttributes attributes){
+
+        if(result.hasErrors()){
+            attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+            return "redirect:/falenciaPessoal/despesas/addDespesa";
+        }
+
+        despRepository.save(despesa);
+        attributes.addFlashAttribute("mensagem", "Despesa cadastrada com sucesso!");
+        return "redirect:/falenciaPessoal/despesas";
+    }
+
+    @RequestMapping("/falenciaPessoal/despesas/delete/{id}")
+    public String deletarDespesa(@PathVariable("id") Integer codigo){
+        despRepository.deleteById(codigo);
+        return "redirect:/falenciaPessoal/despesas";
+    }
+
+    @RequestMapping(value="/falenciaPessoal/despesas/edit/{id}",method = RequestMethod.GET)
+    public ModelAndView detalhesDespesa(@PathVariable("id") Integer codigo){
+        ModelAndView mv = null;
+        Optional<Despesa> despesa = despRepository.findById(codigo);
+        if(despesa.isPresent()){
+            mv = new ModelAndView("editDespesa");
+            mv.addObject("despesa", despesa.get());
+        }
+
+        return mv;
+    }
+
+    @RequestMapping("/falenciaPessoal/despesas/edit/{id}")
+    public String editarDespesa(@PathVariable("id") Integer id, @Validated Despesa despesa, BindingResult result, Model model){
+
+        Optional<Despesa> existingDespesaOptional = despRepository.findById(id);
+        if (existingDespesaOptional.isPresent()) {
+            Despesa despesaSalva = existingDespesaOptional.get();
+            BeanUtils.copyProperties(despesa, despesaSalva, "id_categoria");
+            despRepository.save(despesaSalva);
+        }
+
+        return "redirect:/falenciaPessoal/despesas";
     }
 
     //------------------ HTML DESPESAS
 
 
 
+
+
+
+
+
     //------------------ HTML RECEITAS
 
     @RequestMapping("/falenciaPessoal/receitas")
-    public ModelAndView listarReceitas(){
-        ModelAndView mv = new ModelAndView("listarReceita");
+    public ModelAndView listarReceita(){
+        ModelAndView mv = new ModelAndView("listarReceitas");
         Iterable<Receita> receitas = recRepository.findAll();
         mv.addObject("receitas", receitas);
         return mv;
+    }
+
+    @RequestMapping(value="/falenciaPessoal/receitas/add", method=RequestMethod.GET)
+    public String formReceita(){
+        return "addReceita";
+    }
+
+    @PostMapping("/falenciaPessoal/receitas/add")
+    public String formReceita(@Validated Receita receita, BindingResult result, RedirectAttributes attributes){
+
+        if(result.hasErrors()){
+            attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+            return "redirect:/falenciaPessoal/receitas/addReceita";
+        }
+
+        recRepository.save(receita);
+        attributes.addFlashAttribute("mensagem", "Receita cadastrada com sucesso!");
+        return "redirect:/falenciaPessoal/receitas";
+    }
+
+    @RequestMapping("/falenciaPessoal/receitas/delete/{id}")
+    public String deletarReceita(@PathVariable("id") Integer codigo){
+        despRepository.deleteById(codigo);
+        return "redirect:/falenciaPessoal/receitas";
+    }
+
+    @RequestMapping(value="/falenciaPessoal/receitas/edit/{id}",method = RequestMethod.GET)
+    public ModelAndView detalhesReceita(@PathVariable("id") Integer codigo){
+        ModelAndView mv = null;
+        Optional<Receita> receita = recRepository.findById(codigo);
+        if(receita.isPresent()){
+            mv = new ModelAndView("editReceita");
+            mv.addObject("receita", receita.get());
+        }
+        return mv;
+    }
+
+    @RequestMapping("/falenciaPessoal/receitas/edit/{id}")
+    public String editarReceita(@PathVariable("id") Integer id, @Validated Receita receita, BindingResult result, Model model){
+
+        Optional<Receita> existingReceitaOptional = recRepository.findById(id);
+        if (existingReceitaOptional.isPresent()) {
+            Receita receitaSalva = existingReceitaOptional.get();
+            BeanUtils.copyProperties(receita, receitaSalva, "id_categoria");
+            recRepository.save(receitaSalva);
+        }
+
+        return "redirect:/falenciaPessoal/receitas";
     }
 
     //------------------ HTML RECEITAS
