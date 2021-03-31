@@ -84,15 +84,6 @@ public class DespesaController {
 
     ///TESTES
 
-    /*@RequestMapping(value="/despesaComCategoria/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Despesa getDespesaComCategoriaNome(@PathVariable("id") Integer id){
-        Optional<Despesa> despesa = repository.findById(id);
-        //despesa.get().
-        //despesa.g
-       // despesa.
-
-        return despesa.get();
-    }*/
 
 
 }
