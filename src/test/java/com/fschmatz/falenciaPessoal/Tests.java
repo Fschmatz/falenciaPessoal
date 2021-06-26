@@ -85,12 +85,14 @@ public class Tests {
         assertThat(despesaController.getById(1)).isNotNull();
     }
 
-    @Test
+
+    //FEITA PARA ERRAR
+   /* @Test
     public void getDespesaCategoriaByIdTest() throws Exception {
         Optional<Despesa> existingItemOptional = despesaRepository.findById(2);
         assertThat(existingItemOptional.get().getCategoria().getDescricao()).isEqualTo("Criação de Chinchilas");
     }
-
+*/
 //--------------------- DESPESA
 
 
