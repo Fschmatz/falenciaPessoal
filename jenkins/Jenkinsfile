@@ -1,28 +1,17 @@
 pipeline {
     agent any
-
+    triggers {
+        pollSCM '* * * * *'
+    }
     stages {
-        stage ('Compile Stage') {
+        stage('Build') {
             steps {
-                withMaven(maven : 'maven_3_6_3') {
-                    sh 'mvn clean compile'
-                }
+                sh './gradlew assemble'
             }
         }
-
-        stage ('Testing Stage') {
+        stage('Test') {
             steps {
-                withMaven(maven : 'maven_3_6_3') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : 'maven_3_6_3') {
-                    sh 'mvn deploy'
-                }
+                sh './gradlew test'
             }
         }
     }
