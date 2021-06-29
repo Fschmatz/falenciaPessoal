@@ -21,7 +21,7 @@ pipeline{
         }
         stage ('Deploy App - Homologacão') {
             steps {
-                sh 'docker-compose -f docker-compose-dev.yml up --build --force-recreate -d'
+                sh 'docker-compose -f docker-compose-homolog.yml up --build --force-recreate -d'
             }
         }
         stage ( 'Aprovar' ) {
