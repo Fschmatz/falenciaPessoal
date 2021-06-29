@@ -60,7 +60,7 @@ public class Tests {
     @Test
     public void getCategoriaNameByIdTest() throws Exception {
         Optional<Categoria> existingItemOptional = catRepository.findById(1);
-        assertThat(existingItemOptional.get().getDescricao()).isEqualTo("Alimentação Maromba");
+        assertThat(existingItemOptional.get().getDescricao()).isEqualTo("Alimentação");
     }
 
     @Test
