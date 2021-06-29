@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from com.fschmatz.falenciaPessoal.repository -->
 	</parent>
 	<groupId>com.fschmatz</groupId>
-	<artifactId>falenciaPessoal</artifactId>
+	<artifactId>falenciapessoal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>falenciaPessoal</name>
+	<name>falenciapessoal</name>
 	<description>Projeto Aula</description>
 	<properties>
 		<java.version>11</java.version>
