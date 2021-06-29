@@ -9,7 +9,7 @@ pipeline{
                 sh 'mvn clean package -DskipTests=true'
             }
         }
-        stage ('Update Liquibase'){
+        stage ('Liquibase'){
             steps{
                 sh 'mvn liquibase:update'
             }

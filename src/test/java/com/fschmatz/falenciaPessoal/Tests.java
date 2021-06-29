@@ -63,11 +63,11 @@ public class Tests {
         assertThat(existingItemOptional.get().getDescricao()).isEqualTo("Alimentação");
     }
 
-    @Test
+    /*@Test
     public void getCategoriaNameByIdCompareTest() throws Exception {
         Optional<Categoria> existingItemOptional = catRepository.findById(10);
         Assert.assertEquals(existingItemOptional.get().getDescricao(),"Cachaça");
-    }
+    }*/
 
 //--------------------- CATEGORIA
 
