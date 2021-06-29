@@ -4,7 +4,7 @@ pipeline{
     }
     agent any
     stages {
-        stage ('Build App - Homologação'){
+        stage ('Build App - Homologacão'){
             steps{
                 sh 'mvn clean package -DskipTests=true'
             }
@@ -19,7 +19,7 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stage ('Deploy App - Homologação') {
+        stage ('Deploy App - Homologacão') {
             steps {
                 sh 'docker-compose -f docker-compose-dev.yml up --build --force-recreate -d'
             }
@@ -33,7 +33,7 @@ pipeline{
                 }
             }
         }
-        stage ('Deploy App - Produção') {
+        stage ('Deploy App - Producão') {
             steps {
                 sh 'docker-compose -f docker-compose-prod.yml up --build --force-recreate -d'
             }
