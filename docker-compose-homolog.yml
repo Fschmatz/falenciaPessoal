@@ -16,7 +16,7 @@ services:
       - DATABASE_HOST=falenciapessoal
       - DATABASE_PORT=5432
       - DATABASE_USER=postgres
-      - DATABASE_PASSWD=baal
+      - DATABASE_PASSWD=postgres
 
 networks:
   dev_net:

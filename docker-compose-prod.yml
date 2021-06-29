@@ -28,7 +28,7 @@ services:
       - DATABASE_HOST=db-prod
       - DATABASE_PORT=5432
       - DATABASE_USER=postgres
-      - DATABASE_PASSWD=baal
+      - DATABASE_PASSWD=postgres
     depends_on:
       - db-prod
 
