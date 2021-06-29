@@ -11,13 +11,6 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=falenciapessoal
     restart: "always"
-    #volumes:
-    #  - dev_postgresql:/var/lib/postgresql
-    #  - dev_postgresql_data:/var/lib/postgresql/data
 
 networks:
   dev_net:
-
-#volumes:
-#  dev_postgresql:
-#  dev_postgresql_data:

@@ -1,6 +1,7 @@
-FROM tomcat:9.0.48-jdk8-openjdk
+FROM openjdk:8-jdk-alpine
 
-ARG WAR_FILE
+ARG JAR_FILE
 ARG CONTEXT
 
-COPY ${WAR_FILE} /usr/local/tomcat/webapps/${CONTEXT}.war
+COPY ${JAR_FILE} ${CONTEXT}.jar
+ENTRYPOINT ["java","-jar","app.jar"]

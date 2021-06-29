@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  db-prod:
+    container_name: db-prod
+    image: postgres:9.6
+    networks:
+      - prod_net
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=falenciapessoal
+    volumes:
+      - prod_postgresql:/var/lib/postgresql
+      - prod_postgresql_data:/var/lib/postgresql/data
+
+  backend-prod:
+    containername: app-prod
+    image: app:build${BUILD_NUMBER}
+    build:
+      context: .
+      args:
+        - JAR_FILE=target/*.jar
+        - CONTEXT=app
+    networks:
+      - prod_net
+    ports:
+      - 81:9090
+    environment:
+      - DATABASE_HOST=db-prod
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWD=baal
+    depends_on:
+      - db-prod
+
+networks:
+  prod_net:
+
+volumes:
+  prod_postgresql:
+  prod_postgresql_data:
