@@ -63,12 +63,6 @@ public class Tests {
         assertThat(existingItemOptional.get().getDescricao()).isEqualTo("Alimentação");
     }
 
-    /*@Test
-    public void getCategoriaNameByIdCompareTest() throws Exception {
-        Optional<Categoria> existingItemOptional = catRepository.findById(10);
-        Assert.assertEquals(existingItemOptional.get().getDescricao(),"Cachaça");
-    }*/
-
 //--------------------- CATEGORIA
 
 
@@ -85,14 +79,6 @@ public class Tests {
         assertThat(despesaController.getById(1)).isNotNull();
     }
 
-
-    //FEITA PARA ERRAR
-   /* @Test
-    public void getDespesaCategoriaByIdTest() throws Exception {
-        Optional<Despesa> existingItemOptional = despesaRepository.findById(2);
-        assertThat(existingItemOptional.get().getCategoria().getDescricao()).isEqualTo("Criação de Chinchilas");
-    }
-*/
 //--------------------- DESPESA
 
 
