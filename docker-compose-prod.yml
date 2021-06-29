@@ -13,7 +13,7 @@ services:
       - prod_postgresql_data:/var/lib/postgresql/data
 
   backend-prod:
-    containername: app-prod
+    container_name: app-prod
     image: app:build${BUILD_NUMBER}
     build:
       context: .
