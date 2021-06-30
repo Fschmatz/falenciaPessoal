@@ -24,7 +24,7 @@ pipeline{
                 sh 'docker-compose -f docker-compose-homolog.yml up --build --force-recreate -d'
             }
         }
-        stage ( 'Requisitar Aprovação' ) {
+        stage ( 'Requisitar Aprovacão' ) {
             steps {
                 script {
                     timeout(time: 12, unit: 'HOURS') {
