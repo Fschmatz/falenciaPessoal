@@ -56,12 +56,13 @@ CREATE TABLE IF NOT EXISTS receita (
 );
 --rollback DROP TABLE receita;
 
---changeset fernando:7
+/*--changeset fernando:7
 CREATE TABLE IF NOT EXISTS testeApresentacao(
      id_teste SERIAL PRIMARY KEY,
      nome TEXT NOT NULL
 );
 --rollback DROP TABLE testeApresentacao;
+*/
 
 
 
