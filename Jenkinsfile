@@ -4,7 +4,7 @@ pipeline{
     }
     agent any
     stages {
-        stage ('Build App - Homologacão'){
+        stage ('Build - Homologacão'){
             steps{
                 sh 'mvn clean package -DskipTests=true'
             }
@@ -19,12 +19,12 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stage ('Deploy App - Homologacão') {
+        stage ('Deploy - Homologacão') {
             steps {
                 sh 'docker-compose -f docker-compose-homolog.yml up --build --force-recreate -d'
             }
         }
-        stage ( 'Aprovar' ) {
+        stage ( 'Requisitar Aprovação' ) {
             steps {
                 script {
                     timeout(time: 12, unit: 'HOURS') {
@@ -33,7 +33,7 @@ pipeline{
                 }
             }
         }
-        stage ('Deploy App - Producão') {
+        stage ('Deploy - Producão') {
             steps {
                 sh 'docker-compose -f docker-compose-prod.yml up --build --force-recreate -d'
             }
